@@ -25,8 +25,8 @@ def save_values(dictionary):
                     new_value = dictionary[partes[0]]
                     if partes[0] in ['background', 'foreground']:
                         new_value = "#" + new_value
-                    linea_nueva = f"{partes[0]} {new_value}\n"
-                    fOutPut.write(linea_nueva)
+                        linea_nueva = f"{partes[0]} {new_value}\n"
+                        fOutPut.write(linea_nueva)
                 else:
                     fOutPut.write(linea)
         print("Succesfully updated congfig... ")
@@ -79,13 +79,12 @@ def main():
         elif arg is None:
             is_none = True
 
-    if not is_none:
-        load_values()
-    elif ffArg != str:
-        print("Debe especificar un valor literal")
+    
     if is_none:
         print('You must send an argument, try: {} -h or --help'.format(PROGRAM_NAME))
-    
+    else:
+        load_values()
+
 if __name__ == "__main__":
    main() 
 
