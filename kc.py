@@ -17,19 +17,19 @@ p = (Path().home() / '.config' / 'kitty' / 'kitty.conf')
 def save_values(dictionary):
     try:
         with open(p, 'r') as fInPut:
-            lineas = fInPut.readlines()
+            lines = fInPut.readlines()
         with open(p, 'w') as fOutPut:
-            for linea in lineas:
-                partes = linea.split()
+            for line in lines:
+                partes = line.split()
                 if len(partes) >= 2 and partes[0] in dictionary and dictionary[partes[0]] is not None:
                     new_value = dictionary[partes[0]]
                     if partes[0] in ['background', 'foreground']:
                         new_value = "#" + new_value
                         new_line = f"{partes[0]} {new_value}\n"
-                        fOutPut.write(linea_nueva)
+                        fOutPut.write(new_line)
                 else:
-                    fOutPut.write(linea)
-        print("Succesfully updated congfig... ")
+                    fOutPut.write(line)
+        print("Succesfully updated config...")
     except OSError as err:
         print("Os Error:", err)
 
