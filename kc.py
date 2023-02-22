@@ -48,7 +48,7 @@ def main():
         type=int
     )
     parser.add_argument('-f', '--foreground-color',
-        help='This option is used to change foreground',
+        help='This option is used to change foreground color',
         type=int
     ) 
     parser.add_argument('-s', '--font-size', 
