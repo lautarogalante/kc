@@ -25,7 +25,7 @@ def save_values(dictionary):
                     new_value = dictionary[partes[0]]
                     if partes[0] in ['background', 'foreground']:
                         new_value = "#" + new_value
-                        linea_nueva = f"{partes[0]} {new_value}\n"
+                        new_line = f"{partes[0]} {new_value}\n"
                         fOutPut.write(linea_nueva)
                 else:
                     fOutPut.write(linea)
