@@ -33,6 +33,11 @@ def save_values(dictionary):
     except OSError as err:
         print("Os Error:", err)
 
+def validate_args(value):
+    if value.isdigit():
+        raise argparse.ArgumentTypeError("The value must be numerical!")
+    return value
+
 def main():
 
     parser = argparse.ArgumentParser(
@@ -41,7 +46,7 @@ def main():
     )
     parser.add_argument('-ff', '--font-family',
         help="This option is used to change the font family",
-        type=str
+        type=validate_args
     )
     parser.add_argument('-b', '--background-color',
         help='This option is used to change background color',
